@@ -1,0 +1,25 @@
+server:
+   port: 9000
+spring:
+   kafka:
+     consumer:
+        #Sbrago
+        #bootstrap-servers: kafka:9092
+        #SCRUM
+        bootstrap-servers: kafka01:9092,kafka02:9092,kafka03:9092
+        group-id: demo_kafka
+        auto-offset-reset: earliest
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+     producer:
+        #Sbrago
+        #bootstrap-servers: kafka:9092
+        #SCRUM
+        bootstrap-servers: kafka01:9092,kafka02:9092,kafka03:9092
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.apache.kafka.common.serialization.StringSerializer
+myconf:
+  kafka:
+    partition-backward-offset: 10
+    maxPollTimeout: 2000
+    topic-format: "%sdemoTest"
