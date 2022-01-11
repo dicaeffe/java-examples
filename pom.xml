@@ -11,7 +11,7 @@
 	
 	<!-- Project information -->
 	<groupId>my.demo</groupId>
-	<artifactId>ex-plorationdemo</artifactId>
+	<artifactId>exploration-notes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>exploration</name>
 	<description>Demo project used to explore Spring Boot</description>
