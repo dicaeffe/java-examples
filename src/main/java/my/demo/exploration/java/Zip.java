@@ -41,15 +41,23 @@ public class Zip {
 
 		log.info("============> files={}", files);
 		
+		log.info("============> ------------------------------");
+		
 		log.info("============> zipToFile(file -> file)");
 		zipToFile(DIR_TEST_FINAL+"\\zipped.zip", files);
 		log.info("============> unzipToFile(file -> file)");
 		unzipToFile(DIR_TEST_FINAL+"\\zipped.zip", DIR_TEST_FINAL+"\\unzipped");
 		
+		log.info("============> ------------------------------");
+		
 		log.info("============> zipToByte(file -> byte[])");
 		byte[] zipArr = zipToByte(files);
 		log.info("============> unzipToFile(byte[] -> file)");
 		unzipToFile(zipArr, DIR_TEST_FINAL+"\\unzippedbyte");
+		
+
+		
+		log.info("============> FLOW-----------------------------");
 		
 		log.info("============> zipToByte(file -> byte[]) [TMP]");
 		byte[] zipFile = zipToByte(files);
@@ -69,23 +77,23 @@ public class Zip {
 						) {
 
 			ZipEntry zipEntry = zis.getNextEntry();
-				byte[] buffer = new byte[1024];
-
-				// Use a try-with-resources to instantiate the stream for the buffered read of the input file
-				try (
-						BufferedOutputStream bos = new BufferedOutputStream(
-								new FileOutputStream(destDirPath + File.separator + zipEntry.getName()));
-						) {
-					
-					int bytes = 0;
-					while ((bytes = zis.read(buffer)) > 0) {
-						bos.write(buffer, 0, bytes);
-						bos.flush();
-					}
-					
-				} catch (IOException e) {
-					e.printStackTrace();
+			byte[] buffer = new byte[1024];
+			
+			// Use a try-with-resources to instantiate the stream for the buffered read of the input file
+			try (
+					BufferedOutputStream bos = new BufferedOutputStream(
+							new FileOutputStream(destDirPath + File.separator + zipEntry.getName()));
+					) {
+				
+				int bytes = 0;
+				while ((bytes = zis.read(buffer)) > 0) {
+					bos.write(buffer, 0, bytes);
+					bos.flush();
 				}
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 				
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -96,8 +104,9 @@ public class Zip {
 		// Use a try-with-resources to instantiate the stream for the buffered read of the zip output file
 		try (
 				ByteArrayOutputStream baos = new ByteArrayOutputStream();
-				ZipOutputStream zos = new ZipOutputStream(baos);) {
-			
+				ZipOutputStream zos = new ZipOutputStream(baos);
+				) {
+
 			// Loop over file list
 			files.forEach(file -> {
 				byte[] buffer = new byte[1024];
@@ -106,7 +115,7 @@ public class Zip {
 				try (
 						FileInputStream fis = new FileInputStream(file);
 						BufferedInputStream bis = new BufferedInputStream(fis);) {
-					
+
 					ZipEntry zipEntry = new ZipEntry(file.getName());
 					zos.putNextEntry(zipEntry);
 					int bytes = 0;
@@ -155,6 +164,7 @@ public class Zip {
 			e.printStackTrace();
 		}
 	}
+	
 
 	private static void zipToFile(String zipFilePath, List<File> files) {
 		// Use a try-with-resources to instantiate the stream for the buffered read of the zip output file
@@ -174,6 +184,7 @@ public class Zip {
 					
 					ZipEntry zipEntry = new ZipEntry(file.getName());
 					zos.putNextEntry(zipEntry);
+					
 					int bytes = 0;
 					while ((bytes = bis.read(buffer)) > 0) {
 						bos.write(buffer, 0, bytes);
