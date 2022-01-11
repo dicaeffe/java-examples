@@ -1,4 +1,4 @@
-package demo.json;
+package my.demo.exploration.json;
 
 import java.util.Arrays;
 import java.util.List;

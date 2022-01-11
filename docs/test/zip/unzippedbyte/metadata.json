@@ -1,0 +1,19 @@
+{
+	"owners": [{
+		"name": "Marie",
+		"surname": "Curie",
+		"cf": "SKDMRA34S47Z127H"
+	}],
+	"LRAs": [{
+		"id": "1234567890",
+		"name": "Alfred",
+		"surname": "Nobel",
+		"cf": "NBLLRD33R21Z132W"
+	}],
+	"fileName": "myRecognitionFiles",
+	"serialId": "123qwerty456asd789",
+	"webhookURL": "https://my.webhook.is/here/",
+	"creationDate": "2021-12-31T23:59:59.999Z",
+	"expirationDate": "2021-12-31T23:59:59.999Z",
+	"schemaVersion": "1.0.0"
+}
