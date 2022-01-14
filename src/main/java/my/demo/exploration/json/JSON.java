@@ -8,6 +8,9 @@ import org.everit.json.schema.loader.SchemaLoader;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.gson.Gson;
 
 public class JSON {
@@ -86,5 +89,29 @@ public class JSON {
 		
 		JSONObject jsonSubject = new JSONObject(new JSONTokener(jsonToBeValidate));
 		schema.validate(jsonSubject);
+	}
+	
+	public static void findValue() {
+        try {
+    		String jsonString = "{\n"
+    				+ "	\"id\": 1,\n"
+    				+ "	\"name\": \"Lampshade\",\n"
+    				+ "	\"details\": {\n"
+    				+ "		\"day-1\": \"yesterday\",\n"
+    				+ "		\"day1\": \"today\",\n"
+    				+ "		\"day2\": \"tomorrow\"\n"
+    				+ "	},\n"
+    				+ "	\"price\": 0\n"
+    				+ "}";
+			System.out.println(jsonString);
+			System.out.println("---");
+    		
+            ObjectMapper mapper = new ObjectMapper();
+			ObjectNode node = mapper.readValue(jsonString, ObjectNode.class);
+			System.out.println(node.findValue("day1"));
+			
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
 	}
 }
