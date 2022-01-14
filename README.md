@@ -31,24 +31,27 @@ An incomplete list of sources where I took the examples
     <th>reference</th>
   </tr>
   <tr>
-    <td>Spring RESTful service</td><td>my.demo.exploration.spring.restfulservice</td><td>https://spring.io/guides/gs/rest-service/</td>
+    <td>Spring RESTful service</td><td>my.demo.exploration.libs.spring.restfulservice</td><td>https://spring.io/guides/gs/rest-service/</td>
   </tr>
   <tr>
-    <td>Spring configuration of RESTful service</td><td>my.demo.exploration.spring.service.restful.configuration</td><td>https://www.baeldung.com/bootstraping-a-web-application-with-spring-and-java-based-configuration</td>
+    <td>Spring configuration of RESTful service</td><td>my.demo.exploration.libs.spring.service.restful.configuration</td><td>https://www.baeldung.com/bootstraping-a-web-application-with-spring-and-java-based-configuration</td>
   </tr>
   <tr>
-    <td>Spring configuration of MVC service</td><td>my.demo.exploration.spring.service.mvc.configuration</td><td>https://www.baeldung.com/bootstraping-a-web-application-with-spring-and-java-based-configuration</td>
+    <td>Spring configuration of MVC service</td><td>my.demo.exploration.libs.spring.service.mvc.configuration</td><td>https://www.baeldung.com/bootstraping-a-web-application-with-spring-and-java-based-configuration</td>
   </tr>
   <tr>
-    <td>Spring Data JPA access</td><td>my.demo.exploration.spring.service.restful.datajpa</td><td>https://spring.io/guides/gs/accessing-data-jpa/</td>
+    <td>Spring Data JPA access</td><td>my.demo.exploration.libs.spring.service.restful.datajpa</td><td>https://spring.io/guides/gs/accessing-data-jpa/</td>
   </tr>
   <tr>
-    <td>Spring Data JPA access with Rest</td><td>my.demo.exploration.spring.service.mvc.datajparest</td><td>https://spring.io/guides/gs/accessing-data-rest/</td>
+    <td>Spring Data JPA access with Rest</td><td>my.demo.exploration.libs.spring.service.mvc.datajparest</td><td>https://spring.io/guides/gs/accessing-data-rest/</td>
   </tr>
   <tr>
-    <td>Spring Security for Authorization</td><td>my.demo.exploration.spring.service.restful.security.authorization</td><td>https://docs.spring.io/spring-security/site/docs/5.0.7.RELEASE/reference/html/el-access.html</td>
+    <td>Spring Security for Authorization</td><td>my.demo.exploration.libs.spring.service.restful.security.authorization</td><td>https://docs.spring.io/spring-security/site/docs/5.0.7.RELEASE/reference/html/el-access.html</td>
   </tr>
   <tr>
-    <td>Spring Security for Authentication</td><td>my.demo.exploration.spring.service.mvc.security.authentication</td><td>https://spring.io/guides/gs/securing-web/</td>
+    <td>Spring Security for Authentication</td><td>my.demo.exploration.libs.spring.service.mvc.security.authentication</td><td>https://spring.io/guides/gs/securing-web/</td>
+  </tr>
+  <tr>
+    <td>Introduction to QueryDSL</td><td>my.demo.exploration.libs.querydsl</td><td>https://www.baeldung.com/intro-to-querydsl</td>
   </tr>
 </table>
